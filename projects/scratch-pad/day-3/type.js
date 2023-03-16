@@ -15,7 +15,7 @@
 function isArray(value) {
     // YOUR CODE BELOW HERE //
     
-    
+    // look up method to determine if value is an array
     
     
     // YOUR CODE ABOVE HERE //
@@ -29,9 +29,17 @@ function isArray(value) {
  * null, not an Array, not a Date - all of these will return 'object' if used 
  * with typeof.
  */
-function isObject(value) {
+function isObject(value) { // { a: 1, b: 2 } // null // new Date()
     // YOUR CODE BELOW HERE //
-    
+     // YOUR CODE BELOW HERE //
+    // if value is an object       AND   not null                AND  not a date             AND   is not an array
+    if ((typeof value === 'object') && (typeof value !== 'null') && (!(value instanceof Date)) && (!(Array.isArray(value)))) {
+        return true; // say true
+    }
+    else {
+       return false; //otherwise say false
+   };
+   // YOUR CODE ABOVE HERE //
     
     
     
@@ -46,10 +54,13 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+        //if value is an object         and is not null              and not a date           OR is an array
+        if ((typeof value === 'object') && (value !== null) && (!(value instanceof Date)) || (Array.isArray(value))){
+            return true; // return true
+        }
+            else { //otherwise it is false
+           return false;
+       }
     // YOUR CODE ABOVE HERE //
 }
 
@@ -58,14 +69,14 @@ function isCollection(value) {
  * 
  * Types are one of: 
  *    - "string"
- *    - "array"
+ *    - "array" // 
  *    - "object"
  *    - "undefined"
  *    - "number"
  *    - "boolean"
- *    - "null"
+ *    - "null" // 
  *    - "function"
- *    - "date"
+ *    - "date" // 
  * 
  * Examples:
  *    typeOf(134) -> "number"
@@ -74,9 +85,6 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
     
     // YOUR CODE ABOVE HERE //
 }
